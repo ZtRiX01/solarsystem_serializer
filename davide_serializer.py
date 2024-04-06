@@ -1,6 +1,6 @@
 import yaml
 from tabulate import tabulate
-import pandas as pd
+
 
 class Serializer:
     def __init__(self, document_path: str):
@@ -10,22 +10,18 @@ class Serializer:
         self.max_distances = {}
         self.table = []
 
-
-        
-    #liest die Datei und wird als self.convert_dict definiert
     def extract_solar_system(self):
         with open(self.path, 'r') as yaml_file:
             self.planet_dict = yaml.safe_load(yaml_file)
         self.convert_dict()
 
-
-            #Es durchläuft die Liste der Planeten in zeile 25 und extrahiert den Planetenanmen und die Netfernung und speichert als die variable new.dict
     def convert_dict(self):
-        new_dict ={} 
+        new_dict = {}
         for i in self.planet_dict['sun_system']['distance_to_sun']:
             planet_name = list(i.keys())[0]
             distance = i[planet_name]
             new_dict[planet_name] = distance
+
         self.planet_dict = new_dict
 
     def calc_min_distances(self):
