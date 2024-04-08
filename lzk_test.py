@@ -1,6 +1,8 @@
 import yaml
 import pandas as pd
 
+
+
 def readFile(fil: str) :
     with open(fil, 'r') as file:
         sun_system_data = yaml.safe_load(file)
