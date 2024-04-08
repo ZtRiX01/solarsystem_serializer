@@ -54,7 +54,7 @@ def write_to_excel(distance, filename):
     # Excel-Datei schreiben
     df.to_excel(filename)
 
-sun_system = readFile("solar_system 1.yaml")
+sun_system = readFile("solar_system.yaml")
 data = convert_file(sun_system)
 calc_min = calc_min_distance(data)
 calc_max = calc_max_distance(data)
