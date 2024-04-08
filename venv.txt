@@ -1,0 +1,6 @@
+venv ertsellen = py -m venv .venv
+
+
+venve aktivieren
+
+.ven\Scripts\activate
